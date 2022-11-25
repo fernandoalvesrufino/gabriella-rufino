@@ -24,6 +24,8 @@ img {
 
   /* colors */
   --hue: 45;
+  /* --hue: 331; (Rosa) */
+
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
