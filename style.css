@@ -350,6 +350,11 @@ nav.show div.icon-close{
 #about .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  text-align: center;
+}
+
+#about .text p {
+  text-align: left;
 }
 
 /* -------------- services -------------- */
