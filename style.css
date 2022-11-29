@@ -490,7 +490,7 @@ nav.show div.icon-close{
 
 #contact ul li {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 #contact ul li:hover p{
