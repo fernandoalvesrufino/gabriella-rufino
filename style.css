@@ -568,14 +568,16 @@ footer .social a:hover{
   bottom: 1rem;
 
   padding: 0.5rem;
-  clip-path: circle();
+  /* clip-path: circle(); */
+  border: 1px solid white;
+  border-radius: 50%;
 
   font-size: 1.5rem;
   line-height: 0;
 
   visibility: hidden;
   opacity: 0;
-  
+
   transition: 0.3s;
   transform: translateY(100%);
 } 
