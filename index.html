@@ -1,791 +1,333 @@
-/* -------------- reset -------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-/* -------------- variables -------------- */
-:root {
-  --header-height: 4.5rem;
-
-  /* colors */
-  --hue: 49;
-  /* --hue: 331; (Rosa) */
-
-  /* HSL color mode */
-  --base-color: hsl(var(--hue) 65% 55%);
-  --card-color: hsl(var(--hue) 50% 55%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
-  --base-color-alt: hsl(var(--hue) 57% 53%);
-  --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 46%);
-  --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
-
-  /* fonts */
-  --title-font-size: 1.85rem;
-  --subtitle-font-size: 1rem;
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriella Rufino</title>
   
-  --title-font: 'Poppins', sans-serif;
-  --body-font: 'DN Sans', sans-serif;
-}
+  <!-- icons -->
+  <link rel="stylesheet" href="assets/fonts/style.css">
+
+  <!-- https://swiperjs.com/get-started -->
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
 
-/* -------------- base -------------- */
+  <!-- styeles -->
+  <link rel="stylesheet" href="style.css">
 
-html {
-  scroll-behavior: smooth;
-}
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-body {
-  font: 400 1rem "DM Sans", sans-serif;
-  color: var(--text-color);
-  background-color: var(--body-color);
-  -webkit-font-smoothing: antialiased;
-}
+</head>
+<body>
 
-.title {
-  font: 700 var(--title-font-size) var(--title-font);
-  color: var(--title-color);
-  -webkit-font-smoothing: auto;
-}
-
-.button {
-  background-color: var(--base-color);
-  color: var(--text-color-light);
-  height: 3.5rem;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 2rem;
-  border-radius: 0.25rem;
-  font: 500 1rem var(--body-font);
-  transition: background 0.4s;
-  transition: all .45s ease;
-}
-
-.button:hover {
-  background-color: var(--base-color-alt);
-  transform: scale(0.9);
-}
-
-.divider-1 {
-  height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 36%, 57%, 1),
-    hsla(var(--hue), 65%, 88%, 0.34)
-  );
-}
-
-.divider-2 {
-  height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 65%, 88%, 0.34),
-    hsla(var(--hue), 36%, 57%, 1)
-  );
-}
-
-/* -------------- Layout -------------- */
-.container {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.section {
-  padding: calc(5rem + var(--header-height)) 0;
-}
-
-.section .title {
-  margin-bottom: 1rem;
-}
-
-.section .subtitle {
-  font-size: var(--subtitle-font-size);
-}
-
-.section header {
-  margin-bottom: 4rem;
-}
-
-.section header strong {
-  color: var(--base-color);
-}
-
-#header {
-  border-bottom: 1px solid #E4E4E4;
-  margin-bottom: 2rem;
-  display: flex;
-
-  position: fixed;
-  z-index: 100;
-  background-color: var(--body-color);
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-#header.scroll {
-  box-shadow: 0px 0px 12px rgba(0, 8, 0, 0.15);
-}
-
-/* -------------- Logo -------------- */
-.logo {
-  font: 700 1.31rem var(--title-font);
-  color: var(--title-color);
-}
-
-.logo span {
-  color: var(--base-color);
-}
-
-.logo-alt span {
-  color: var(--body-color);
-}
-
-/* -------------- Navigation -------------- */
-nav {
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-nav ul li{
-  text-align: center;
-}
-
-nav ul li a{
-  transition: color 0.2s;
-  position: relative;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: var(--base-color);
-}
-
-nav ul li a::after {
-  content: "";
-  width: 0%;
-  height: 0.125rem;
-  background: var(--base-color);
+  <header id="header">
+    <nav class="container">
+      <a class="logo" href="#">Gabriella<span>Rufino</span></a>
+      <div class="menu">
+        <!-- menu -->
+        <ul class="grid">
+          <li><a class="title" href="#home">Início</a></li>
+          <li><a class="title" href="#about">Sobre</a></li>
+          <li><a class="title" href="#services">Serviços</a></li>
+          <li><a class="title" href="#testimonials">Depoimentos</a></li>
+          <li><a class="title" href="#contact">Contato</a></li>
+        </ul>
+        <!-- /menu -->
+      </div>
+      <div class="toggle icon-menu"></div>
+      <div class="toggle icon-close"></div>
+    </nav>
+  </header>
   
-  position: absolute;
-  left: 0;
-  bottom: -1.5rem;
+  <!-- ------ HOME ------ -->
 
-  transition: width 0.2s;
-}
+  <main>
+    <section class="section" id="home">
+      <div class="container grid">
+        <div class="image">
+          <img src="./img/gabriella-home.png" alt="foto de grabriella rufino">
+        </div>
+        <div class="text">
+          <h2 class="title">Design e nanopigmentação</h2>
+          <p>Transforme o seu olhar com elegância e naturalidade. Mude o seu interior através do exterior!</p>
+          <a class="button" href="https://wa.me/5547996232484?text=Gostaria%20de%20agendar%20um%20horário..." target="_blank">Agendar um horário</a>
+        </div>
+      </div>
+    </section>
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
-  width: 100%;
-}
+    <div class="divider-1"></div>
 
-nav .menu{
-  opacity: 0;
-  visibility: hidden;
-  top: -20rem;
-  transition: 0.2s;
-}
-
-nav .menu ul {
-  display: none;
-}
+    <!-- ------ ABOUT ------ -->
 
 
-/* Mostrar menu */
+    <section class="section" id="about">
+      <div class="container grid">
+        <div class="image"><img src="./img/gabriella-sobre.png" alt="Gabriella Rufino"></div>
+        <div class="text">
+          <h2 class="title">Sobre mim</h2>
+          <p>Meu nome é Gabriella (Gabi ou Gab). Tenho 27 anos e sou Designer de sobrancelha desde os 19. Eu dou muito valor para o tempo, porque é uma das poucas coisas que não tem como recuperar. Não existe dinheiro, posição social, ou insistência que faça ele voltar. Então precisa ser bem valorizado.</p>
+          <br>
+          <p>Ministro cursos de Designer de sobrancelha, tanto presencial como on-line. Seja bem vinda a esse mundo de sobrancelhas bem feitas.</p>
+          <br><br>
+          <a class="button" href="#" target="_blank">Mais sobre os cursos</a>
+        </div>
+      </div>
+    </section>
 
-nav.show .menu {
-  opacity: 1;
-  visibility: visible;
+    <div class="divider-2"></div>
 
-  background: var(--body-color);
+    <!-- ------ SERVICES ------ -->
 
-  height: 100vh;
-  width: 100vw;
+    <section class="section" id="services">
+      <div class="container grid">
+        <header>
+          <h2 class="title">Procedimentos</h2>
+          <p>Com mais de 8 anos de experiência, 
+            já atendi clientes de diversos lugares do Brasil com seus
+            procedimentos únicos e totalmente naturais</p>
+        </header>
+        <div class="cards grid">
+          <div class="card">
+            <!-- <i><img src="./img/design.png" alt="design de sobrancelha"></i> -->
+            <h3 class="title">Spa de Sobrancelha + Design</h3>
+            <div class="layer">
+              <p>
+                Seu design será personalizado e feito de acordo com o seu rosto, quantidade de pelos, prospecção de crescimento dos fios e gosto pessoal.
+                <br><br>
+                <span>
+                  R$ 60,00
+                </span>
+              </p>
+            </div>
+          </div>
 
-  position: fixed;
-  top: 0;
-  left: 0;
+          <div class="card">
+            <!-- <i><img src="./img/henna.png" alt="henna"></i> -->
+            <h3 class="title">Design com Henna Ombré</h3>
+            <div class="layer">
+              <p>
+                A duração da henna é cerca de 7 dias, podendo durar mais ou menos dependendo dos cuidados da cliente. A henna ombré trás um efeito natural ao início da sobrancelha, e mais marcado ao final dela, trazendo um efeito degradê.
+                <br><br>
+                <span>
+                  R$ 80,00
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- <i><img src="./img/tinture.png" alt="tinture brow"></i> -->
+            <h3 class="title">Design com Tinture Brow</h3>
+            <div class="layer">
+              <p>
+                Diferente da henna, a tinture brow pigmenta mais os pelinhos do que a pele. Tendo duração nos pelos de até 4 semanas, e na pele cerca de 2 dias. Ideal se você tem pelinhos grisalhos na sobrancelha, quer escurecê-la, ou mudar a tonalidade.
+                <br><br>
+                <span>
+                  R$ 80,00
+                </span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <!-- <i><img src="./img/epilacao.png" alt="epilação egípcia"></i> -->
+            <h3 class="title">Epílação Egípcia</h3>
+            <div class="layer">
+              <p>
+                Feito com a linha egípcia retirando seus pelinhos desde a raiz, a epilação pode ser feita no rosto inteiro ou em partes dele, como buço, queixo, etc. O resultado é um rosto lisinho e sem pelos por mais tempo.
+                <br><br>
+                <span>
+                  R$ 90,00
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- <i><img src="./img/brow.png" alt="brow lamination"></i> -->
+            <h3 class="title">Brow Lamination</h3>
+            <div class="layer">
+              <p>
+                Efeito de pelinhos penteados para cima com duração de até 4 semanas, sobrancelha mais preenchida, e com design personalizado de acordo com as medidas do seu rosto.
+                <br><br>
+                <span>
+                  R$ 180,00
+                </span>
+              </p>
+            </div>
+          </div>
+          
+          <!-- <div class="card">
+            <i><img src="./img/nano.png" alt="nanopigmentação"></i>
+            <h3 class="title">Nanopigmentação</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi a facilis. Ab enim numquam, laboriosam ea modi ipsa aperiam exercitationem praesentium repellat aliquid eligendi, neque maiores minima eveniet deleniti.
+            </p>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-1"></div>
+
+    <!-- ------ TESTIMONIALS ------ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <header>
+          <h2 class="title">Depoimentos de quem já foi atendida por mim</h2>
+        </header>
+        <div class="testimonials swiper">
+          
+          <div class="swiper-wrapper">
+
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  @gabriellarufino_ quando esta em Guarulhos e faz nossa sobrancelha, a gente não quer guerra com ninguém kkk
+                </p>
+                <cite>
+                  <img src="https://img.freepik.com/premium-vector/male-avatar-icon-unknown-anonymous-person-default-avatar-profile-icon-social-media-user-business-man-man-profile-silhouette-isolated-white-background-vector-illustration_735449-120.jpg" alt="Foto de Winnye Stankunavicius">
+                  Winnye Stankunavicius
+                </cite>
+              </blockquote>
+            </div>
+            
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Gabi quero te agradecer, desde que fiz o curso com vc muuuuuuita coisa mudou tanto por dentro no meu modo de pensar quanto por fora... 
+                  <br>
+                  Foi uma benção
+                </p>
+                <cite>
+                  <!-- site de origem das fotos: https://randomuser.me/photos -->
+                  <!-- random user me -->
+                  <img src="https://img.freepik.com/premium-vector/male-avatar-icon-unknown-anonymous-person-default-avatar-profile-icon-social-media-user-business-man-man-profile-silhouette-isolated-white-background-vector-illustration_735449-120.jpg" alt="Anonimo">
+                  Aline Silva
+                </cite>
+              </blockquote>
+            </div>
   
-  display: grid;
-  place-content: center;
-}
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Foram dois dias intensos em que a @gabriellarufino_ compartilhou seu conhecimento comigo.
+                  <br>
+                  Gabi ensina de forma muito calma, te deixa super a vontade e te passa muita segurança, se você quiser aprender algo novo na área da beleza fala com ela! Tenho certeza que vai amar, assim com eu...
+                </p>
+                <cite>
+                  <img src="https://img.freepik.com/premium-vector/male-avatar-icon-unknown-anonymous-person-default-avatar-profile-icon-social-media-user-business-man-man-profile-silhouette-isolated-white-background-vector-illustration_735449-120.jpg" alt="Foto de Juliana Prado">
+                  Juliana Prado
+                </cite>
+              </blockquote>
+            </div>
+
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Um close de centavos pra sobrancelha de milhões pelas mãos de fada da @gabriellarufino_ que é um amor de pessoa e um poço de paciência rs  
+                </p>
+                <cite>
+                  <img src="https://img.freepik.com/premium-vector/male-avatar-icon-unknown-anonymous-person-default-avatar-profile-icon-social-media-user-business-man-man-profile-silhouette-isolated-white-background-vector-illustration_735449-120.jpg" alt="Foto de Mariana Machado">
+                  Mariana Machado
+                </cite>
+              </blockquote>
+            </div>
+
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-2"></div>
+    
+    <!-- ------ CONTACT ------ -->
+
+    <section class="section" id="contact">
+      <div class="container grid">
+        
+        <div class="text">
+          <h2 class="title">Entre em contato!</h2>
+          <p>Entre em contato comigo, quero tirar suas dúvidas, ouvir suas críticas e sujestões.</p>
+          <a href="https://wa.me/5547996232484?text=Gostaria%20de%20agendar%20um%20horário..." class="button" target="_blank"><i class="icon-whatsapp"></i> Entrar em contato</a>
+        </div>
+
+        <div class="links">
+          <ul class="grid">
+            <li><i><span class="icon-phone"></span></i><p>47 99623-2484</p></li>
+
+            <li>
+              <a href="https://instagram.com/gabriellarufino_" target="_blank">
+                <i><span class="icon-instagram"></span></i><p>@gabriellarufino_</p>
+              </a>
+            </li>
+            
+            <li class="email">
+              <a href="mailto:gabriellarufinosuporte@gmail.com">
+                <i>
+                  <span class="icon-mail"></span>
+                </i> 
+                <p>gabriellarufinosuporte@gmail.com</p>
+              </a>
+
+            </li>
+            <li><i><span class="icon-map-pin"></span></i><p>Rua 2350, nº 300 - Centro, Balneário Camboriú - SC</p></li>
+            <li>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.053204081495!2d-48.634933000000004!3d-26.9968667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b6094310ec5f%3A0x76684cd06d75a872!2sR.%202350%2C%20300%20-%20Centro%2C%20Balne%C3%A1rio%20Cambori%C3%BA%20-%20SC%2C%2088330-422!5e0!3m2!1spt-BR!2sbr!4v1669723175169!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider-1"></div>
+  </main>
+    
+  <footer class="section">
+    <div class="container grid">
+      <div class="brand">
+        <a class="logo logo-alt" href="#home">Gabriella<span>Rufino</span></a>
+        <p>©2022 Gabriella Rufino</p>
+        <p>Todos os direitos reservados.</p>
+      </div>
+
+      <div class="social grid">
+        <a href="https://instagram.com/gabriellarufino_" target="_blank">
+          <img src="./img/insta.svg" alt="logo instagram">
+        </a>
+        <a href="https://wa.me/5547996232482" target="_blank">
+          <img src="./img/whats.svg" alt="logo whatsapp"></i>
+        </a>
+        <!-- <a href="./contact.html" target="_blank">
+          <img src="./img/email.svg" alt="logo email">
+        </a> -->
+      </div>
+    </div>
+  </footer>
 
-nav.show .menu ul {
-  display: grid;
-}
+  <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
 
-nav.show ul.grid {
-  gap: 4rem;
-}
 
-/* -------------- toggle menu -------------- */
-.toggle {
-  color: var(--base-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-nav .icon-close{
-  visibility: hidden;
-  opacity: 0;
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 
-  position: absolute;
-  top: -1.5rem;
-  right: 1.5rem;
-  transition: 0.2s;
-}
-
-nav.show div.icon-close{
-  visibility: visible;
-  opacity: 1;
-  top: 1.5rem;
-}
-
-
-/* -------------- home -------------- */
-#home {
-  overflow: hidden;
-}
-
-#home .container {
-  margin: 0;
-}
-
-#home .image {
-  position: relative;
-}
-
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background-color: var(--base-color-second);
-  position: absolute;
-  top: -16.8%;
-  left: 16.7%;
-  z-index: 0;
-}
-
-#home .image img{
-  position: relative;
-  right: 2.93rem;
-  width: 20rem;
-}
-
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
-}
-
-#home .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-#home .text h1 {
-  margin-bottom: 1rem;
-}
-
-#home .text p {
-  margin-bottom: 2rem;
-}
-
-/* -------------- about -------------- */
-
-#about {
-  background-color: white;
-}
-
-#about .container {
-  margin: 0;
-}
-
-#about .image {
-  position: relative;
-}
-
-#about .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background-color: var(--base-color-second);
-  position: absolute;
-  top: -18.3%;
-  left: -33%;
-  z-index: 0;
-}
-
-#about .image img{
-  position: relative;
-  width: 20rem;
-}
-
-#about .image img,
-#about .image::before {
-  border-radius: 0.25rem;
-}
-
-#about .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-#about .text p {
-  text-align: left;
-}
-
-/* -------------- services -------------- */
-
-.cards.grid{
-  gap: 1.5rem;
-}
-
-.card {
-  padding: 3.625rem 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 8, 0, 0.08);
-  border-bottom: 0.25rem solid var(--base-color);
-  border-radius: 0.25rem 0.25rem 0 0;
-  text-align: center;
-}
-
-.card i {
-  display: block;
-  margin-bottom: 1.5rem;
-  font-size: 5rem;
-  color: var(--base-color);
-}
-
-.card i img {
-  width: 10rem;
-}
-
-.card .title {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.card p {
-  text-align: left;
-}
-/* -------------- testimonials -------------- */
-#testimonials {
-  background: white;
-}
-
-#testimonials .container {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#testimonials header{
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  margin-bottom: 0;
-}
-
-#testimonials blockquote{
-  padding: 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 0.25rem;
-}
-
-#testimonials blockquote p {
-  position: relative;
-  text-indent: 1.875rem;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-  color: var(--title-color);
-}
-
-#testimonials blockquote p span {
-  font: 700 2.5rem serif;
-  position: absolute;
-  top: -0.375rem;
-  left: -1.875rem;
-  color: var(--base-color);
-}
-
-#testimonials cite {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-}
-
-#testimonials cite img {
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-  clip-path: circle();
-  margin-right: 0.5rem;
-}
-
-/* swiper */
-.swiper-slide {
-  height: auto;
-  padding: 4rem 1rem;
-}
-
-.swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--base-color);
-}
-
-/* -------------- contact -------------- */
-#contact .grid{
-  gap: 4rem;
-}
-
-#contact .text {
-  text-align: center;
-}
-
-#contact .text p {
-  margin-bottom: 2rem;
-}
-
-#contact .button i,
-#contact ul li i {
-  font-size: 1.5rem;
-  margin-right: 0.625rem;
-}
-
-#contact .links {
-  margin: 0 auto;
-}
-
-#contact ul.grid {
-  gap: 2rem;
-  margin: 0 auto;
-}
-
-#contact ul li {
-  display: flex;
-  /* align-items: center; */
-}
-
-#contact ul li:hover p{
-  color: var(--base-color);
-  cursor: pointer;
-}
-
-#contact ul li iframe {
-  margin: 0 auto;
-}
-
-#contact .links ul li a {
-  text-decoration: none;
-  color: var(--text-color);
-  display: flex;
-}
-
-#contact .links ul li a p{
-  align-items: center;
-}
-
-#contact ul li i {
-  color: var(--base-color);
-}
-
-#contact iframe{
-  border-radius: 8px ;
-}
-
-/* -------------- footer -------------- */
-footer {
-  background: var(--base-color);
-}
-
-footer.section {
-  padding: 4rem 0;
-}
-
-footer .logo {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-}
-
-footer .brand,
-footer .brand p {
-  color: var(--text-color-light);
-  margin-bottom: 0.75rem;
-}
-
-footer i {
-  font-size: 1.5rem;
-  color: var(--text-color-light);
-}
-
-footer .social {
-  grid-auto-flow: column;
-  width: fit-content;
-}
-
-footer .social a {
-  transition:  0.3s;
-  display: inline-block;
-}
-
-footer .social a:hover{
-  transform: translateY(-8px);
-}
-
-/* -------------- back to top -------------- */
-.back-to-top {
-  background: var(--base-color);
-  color: var(--text-color-light);
-
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-
-  padding: 0.5rem;
-  /* clip-path: circle(); */
-  border: 1px solid white;
-  border-radius: 50%;
-
-  font-size: 1.5rem;
-  line-height: 0;
-
-  visibility: hidden;
-  opacity: 0;
-
-  transition: 0.3s;
-  transform: translateY(100%);
-} 
-
-a.back-to-top:hover {
-  transform: translateY(-8px);
-}
-
-.back-to-top.show {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* -------------- media queries -------------- */
-/* extra large devices: 1200 >  */
-@media (min-width: 1200px) {
-  /* reusable classes */
-  .container {
-    max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .section {
-    padding: 10rem 0;
-  }
-
-  .section header,
-  #testimonials header {
-    max-width: 32rem;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .button {
-    height: 3.125rem;
-  }
-
-  /* navigation */
-  nav .menu {
-    opacity: 1;
-    visibility: visible;
-    top: 0
-  }
-
-  nav .menu ul {
-    display: flex;
-    gap: 2rem;
-  }
-
-  nav .menu ul li a.title {
-    font: 400 1rem var(--body-font);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  nav .menu ul li a.title.active {
-    font-weight: bold;
-    -webkit-font-smoothing: auto;
-
-  }
-  
-  nav .icon-menu {
-    display: none;
-  }
-
-  /* layout */
-  main {
-    margin-top: var(--header-height);
-  }
-
-  /* home */
-  #home .container {
-    grid-auto-flow: column;
-    justify-content: space-between;
-    margin: 0 auto;
-  }
-
-  #home .image {
-    order: 1;
-  }
-
-  #home .text {
-    order: 0;
-    max-width: 24rem;
-    text-align: left;
-  }
-
-  /* about */
-  #about .container {
-    margin: 0 auto;
-    grid-auto-flow: column;
-  }
-
-  /* services */
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.5s;
-    transition: all .45s ease;
-  }
-
-  .layer {
-    width: 100%;
-    height: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 40px;
-    transition: height 0.5s;
-  }
-
-  .layer h3 {
-    transition: all .45s ease;
-    /* height: 5.125rem; */
-  }
-  
-  
-  .layer p{
-    color: rgb(65, 65, 65);
-    font-size: 0.9rem;
-    line-height: 1.2;
-  }
-
-  .layer p span{
-    text-align: center;
-    display: block;
-    font-size: 1rem;
-  }
-
-  .card:hover {
-    box-shadow: 0px 0px 18px var(--card-color);
-    transition: all .45s ease;
-
-  }
-  
-  .card:hover h3{
-    transform: scale(0.9);
-    transition: all .45s ease;
-  }
-
-  .card:hover .layer{
-    background: linear-gradient(var(--base-color), white);
-    height: 100%;
-  }
-
-  /* testimonials */
-  #testimonials .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* contact */
-  #contact .container {
-    grid-auto-flow: column;
-    align-items: center;
-  }
-
-  #contact .text {
-    max-width: 25rem;
-  }
-
-  #contact ul.grid {
-    gap: 1rem;
-  }
-
-  #contact ul li iframe{
-    width:31.25rem;
-    height:9.375rem;
-  }
-
-  /* footer */
-  footer.section{
-    padding: 1.75rem 0;
-  }
-
-  footer .container {
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  footer .logo{
-    font-size: 2.25rem;
-  }
-}
-/* large devices: 1023 >  */
-/* large devices: 992 > */
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
-  }
-}
-/* medium devices: 767 > */
+  <!-- main.js -->
+  <script src="main.js"></script>
+</body>
+</html>
