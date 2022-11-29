@@ -28,6 +28,7 @@ img {
 
   /* HSL color mode */
   --base-color: hsl(var(--hue) 65% 55%);
+  --card-color: hsl(var(--hue) 50% 55%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
@@ -686,11 +687,7 @@ a.back-to-top:hover {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.5s;
-  }
-
-  .layer h3 {
     transition: all .45s ease;
-    /* height: 5.125rem; */
   }
 
   .layer {
@@ -708,12 +705,17 @@ a.back-to-top:hover {
     padding: 0 40px;
     transition: height 0.5s;
   }
+
+  .layer h3 {
+    transition: all .45s ease;
+    /* height: 5.125rem; */
+  }
   
   
   .layer p{
     color: rgb(65, 65, 65);
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.2;
   }
 
   .layer p span{
@@ -721,11 +723,18 @@ a.back-to-top:hover {
     display: block;
     font-size: 1rem;
   }
+
+  .card:hover {
+    box-shadow: 0px 0px 18px var(--card-color);
+    transition: all .45s ease;
+
+  }
   
   .card:hover h3{
     transform: scale(0.9);
     transition: all .45s ease;
   }
+
   .card:hover .layer{
     background: linear-gradient(var(--base-color), white);
     height: 100%;
