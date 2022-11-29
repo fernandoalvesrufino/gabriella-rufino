@@ -73,10 +73,12 @@ body {
   border-radius: 0.25rem;
   font: 500 1rem var(--body-font);
   transition: background 0.4s;
+  transition: all .45s ease;
 }
 
 .button:hover {
   background-color: var(--base-color-alt);
+  transform: scale(0.9);
 }
 
 .divider-1 {
@@ -490,8 +492,23 @@ nav.show div.icon-close{
   align-items: center;
 }
 
+#contact ul li:hover p{
+  color: var(--base-color);
+  cursor: pointer;
+}
+
 #contact ul li iframe {
   margin: 0 auto;
+}
+
+#contact .links ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+}
+
+#contact .links ul li a p{
+  align-items: center;
 }
 
 #contact ul li i {
@@ -671,7 +688,7 @@ a.back-to-top:hover {
 
   .layer h3 {
     transition: all .45s ease;
-
+    /* height: 5.125rem; */
   }
 
   .layer {
@@ -692,7 +709,7 @@ a.back-to-top:hover {
   
   
   .layer p{
-    color: black;
+    color: rgb(65, 65, 65);
     font-size: 0.9rem;
     line-height: 1.4;
   }
@@ -700,7 +717,7 @@ a.back-to-top:hover {
   .layer p span{
     text-align: center;
     display: block;
-    font-size: var(--subtitle-font-size);
+    font-size: 1rem;
   }
   
   .card:hover h3{
