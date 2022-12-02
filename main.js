@@ -61,22 +61,22 @@ scrollReveal.reveal(
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials
   #contact .text, #contact .links,
-  footer .brand, footer .social
+  footer .social, footer .brand
   `,
   { interval: 100 }
 )
 
 /* Botão voltar para o topo */
-const backToTopButton = document.querySelector('.back-to-top')
+// const backToTopButton = document.querySelector('.back-to-top')
 
-function backToTop() {
+// function backToTop() {
 
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add('show')
-  } else{
-    backToTopButton.classList.remove('show')
-  }
-}
+//   if (window.scrollY >= 560) {
+//     backToTopButton.classList.add('show')
+//   } else{
+//     backToTopButton.classList.remove('show')
+//   }
+// }
 
 // menu ativo conforme a seção visível na página 
 const sections = document.querySelectorAll('main section[id]')
