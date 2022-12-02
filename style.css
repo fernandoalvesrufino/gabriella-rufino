@@ -559,8 +559,40 @@ footer .social a:hover{
   transform: translateY(-8px);
 }
 
+/* -------------- help -------------- */
+.help {
+  color: var(--text-color-light);
+
+  width: 4rem;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+
+  font-size: 1.5rem;
+  line-height: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateY(100%);
+} 
+
+a.help:hover {
+  transform: translateY(-8px);
+}
+
+.help.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* -------------- back to top -------------- */
-.back-to-top {
+/* .back-to-top {
   background: var(--base-color);
   color: var(--text-color-light);
 
@@ -569,7 +601,7 @@ footer .social a:hover{
   bottom: 1rem;
 
   padding: 0.5rem;
-  /* clip-path: circle(); */
+  clip-path: circle();
   border: 1px solid white;
   border-radius: 50%;
 
@@ -591,7 +623,7 @@ a.back-to-top:hover {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 
 /* -------------- media queries -------------- */
