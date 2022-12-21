@@ -709,10 +709,14 @@ a.back-to-top:hover {
 
   /* services */
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .card {
+    width: 17rem;
+    height: 15rem;
     padding-left: 3rem;
     padding-right: 3rem;
     position: relative;
@@ -720,6 +724,14 @@ a.back-to-top:hover {
     cursor: pointer;
     transition: transform 0.5s;
     transition: all .45s ease;
+    display: flex;
+  }
+  
+  .card h3 {
+    display: flex;
+    padding: auto;
+    text-align: center;
+    align-items: center;
   }
 
   .layer {
